@@ -50,12 +50,31 @@
 [Signal server](https://support.parsec.app/hc/en-us/articles/4423453624077-Components-and-Connection-Sequence) and these functions are used to control the handshake flow.<br/>
 This is a way to build your own server without relying on the Parsec's online service.
 
-- [ ] ParsecSignalInit
-- [ ] ParsecSignalDestroy
-- [ ] ParsecSignalConnect
-- [ ] ParsecSignalDisconnect
+```mermaid
+sequenceDiagram
+    participant Client
+    participant STUN_Server as STUN Server
+    participant Host
+    participant Signal_API as Signal API
+    
+    Client->>STUN_Server: Start UDP conversation (port 3478)
+    STUN_Server-->>Client: Respond with public IP & listener port
+    Client->>Signal_API: Send connection info via WebSocket
+    Host->>STUN_Server: Start UDP conversation (port 3478)
+    STUN_Server-->>Host: Respond with public IP & listener port
+    Host->>Signal_API: Send connection info via WebSocket
+    Signal_API-->>Client: Host's connection info
+    Signal_API-->>Host: Client's connection info
+    Client->>Host: Attempt connection
+    Host->>Client: Attempt connection
+    Note over Client, Host: Connection established based on NAT traversal success
 
-(Client + Signal API)
+```
+
+- [x] ParsecSignalInit
+- [x] ParsecSignalDestroy
+- [x] ParsecSignalConnect
+- [x] ParsecSignalDisconnect
 - [ ] ParsecClientNewAttempt
 - [x] ParsecClientAddCandidate
 - [x] ParsecClientBeginP2P
