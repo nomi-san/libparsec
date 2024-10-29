@@ -23,7 +23,7 @@ The goal is single header for C/C++, and Rust bindings. Output binaries would be
 ### Client features
 
 - [x] Hardware decoders
-- [x] FFmpeg decoer (smaller build)
+- [x] FFmpeg decoder (smaller build)
 - [x] HEVC decoder 
 - [x] YUV420, YUV444
 - [x] 10-bit color
