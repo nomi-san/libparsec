@@ -1,7 +1,32 @@
-# libparsec
-⚡ The imaginary Parsec SDK — Low latency, peer-to-peer, interactive game streaming.
+<br />
 
-## Covered things
+<p align="center">
+    <img src="https://github.com/user-attachments/assets/1d8b571d-280c-4f1f-bbca-aa55a96783f4" width="120" />
+    <h1 align="center">libparsec</h1>
+    <p align="center">⚡ The imaginary Parsec SDK<br />Low latency, peer-to-peer, interactive game streaming.</p>
+</p>
+
+<br />
+
+## 🚧 Working in progress
+
+The goal is single header for C/C++, and Rust bindings. Output binaries would be static lib and dynamic lib (DLL).
+
+> F**k this $320M acquisition!
+
+### Target platforms
+
+- [x] Windows (64-bit)
+- [ ] Linux
+- [ ] macOS 
+
+### Client features
+
+- [x] Hardware decoders
+- [x] FFmpeg decoer (smaller build)
+- [x] HEVC decoder 
+- [x] YUV420, YUV444
+- [x] 10-bit color
 
 ### Instance functions
 
