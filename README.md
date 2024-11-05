@@ -24,7 +24,7 @@ The goal is single header for C/C++, and Rust bindings. Output binaries would be
 
 - [x] Hardware decoders
 - [x] FFmpeg decoder (smaller build)
-- [x] HEVC decoder 
+- [x] HEVC codec 
 - [x] YUV420, YUV444
 - [x] 10-bit color
 
@@ -100,6 +100,7 @@ sequenceDiagram
 - [x] ParsecSignalDestroy
 - [x] ParsecSignalConnect
 - [x] ParsecSignalDisconnect
+- [x] ParsecSignalSendCandidate
 - [ ] ParsecClientNewAttempt
 - [x] ParsecClientAddCandidate
 - [x] ParsecClientBeginP2P
