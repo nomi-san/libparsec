@@ -68,7 +68,18 @@ The goal is single header for C/C++, and Rust bindings. Output binaries would be
 
 ### Host functions
 
-(not implemented yet)
+`HOST_DESKTOP` only.
+
+- [x] ParsecHostStart
+- [x] ParsecHostStop
+- [x] ParsecHostGetStatus
+- [x] ParsecHostSetConfig
+- [x] ParsecHostGetGuests
+- [x] ParsecHostKickGuest
+- [x] ParsecHostSendUserData
+- [x] ParsecHostSendUserDataAll
+- [x] ParsecHostBeginP2P
+- [x] ParsecHostSetPermissions
 
 ### Signal functions
 
@@ -98,6 +109,7 @@ sequenceDiagram
 
 - [x] ParsecSignalInit
 - [x] ParsecSignalDestroy
+- [x] ParsecSignalUpdateHost
 - [x] ParsecSignalConnect
 - [x] ParsecSignalDisconnect
 - [x] ParsecSignalSendCandidate
