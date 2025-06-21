@@ -59,7 +59,7 @@ The goal is single header for C/C++, and Rust bindings. Output binaries would be
 - [x] ParsecClientPollEvents
 - [ ] ~~ParsecClientGLDestroy~~ (deprecated)
 - [x] ParsecClientSendMessage
-- [ ] ParsecClientPause
+- [x] ParsecClientPause
 - [x] ParsecClientEnableStream
 - [x] ParsecClientSendUserData
 - [x] ParsecClientSendExtraData
@@ -113,7 +113,15 @@ sequenceDiagram
 - [x] ParsecSignalConnect
 - [x] ParsecSignalDisconnect
 - [x] ParsecSignalSendCandidate
-- [ ] ParsecClientNewAttempt
+- [x] ParsecClientNewAttempt
 - [x] ParsecClientAddCandidate
 - [x] ParsecClientBeginP2P
-- [ ] ParsecClientEndConnection
+- [x] ParsecClientEndConnection
+
+Signal callbacks:
+
+- [x] ParsecSignalOpenCallback
+- [x] ParsecSignalErrorCallback
+- [x] ParsecSignalAnswerCallback
+- [x] ParsecSignalCandexCallback
+- [x] ParsecSignalSdkCallback
