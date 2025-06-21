@@ -125,3 +125,50 @@ Signal callbacks:
 - [x] ParsecSignalAnswerCallback
 - [x] ParsecSignalCandexCallback
 - [x] ParsecSignalSdkCallback
+
+### WebRTC client implementation
+
+SCTP is a side protocol of Parsec host implementation that allows WebRTC connection.
+
+The client should meet:
+- SCTP-based Data Channels ([RFC8831](https://www.rfc-editor.org/rfc/rfc8831.html))
+- DTLS/UDP ([RFC7350](https://www.rfc-editor.org/rfc/rfc7350.html) and [RFC8261](https://www.rfc-editor.org/rfc/rfc8261.html))
+- DTLS with ECDSA ([RFC8827](https://www.rfc-editor.org/rfc/rfc8827.html))
+
+```mermaid
+sequenceDiagram
+    participant Client
+    participant SignalServer
+    participant Host
+    participant Proto
+    participant Parsec
+
+    Client->>SignalServer: NewAttempt (request to connect)
+    SignalServer->>Host: Notify of incoming connection
+    Host->>SignalServer: Ready to accept
+    SignalServer->>Client: Host is ready
+
+    Client->>Proto: CreateOffer
+    Proto->>Client: SDP Offer
+    Client->>SignalServer: SendOffer (SDP Offer)
+    SignalServer->>Host: ForwardOffer (SDP Offer)
+    Host->>Proto: ReceiveOffer (SDP Offer)
+    Proto->>Host: CreateAnswer
+    Host->>SignalServer: SendAnswer (SDP Answer)
+    SignalServer->>Client: ForwardAnswer (SDP Answer)
+    Client->>Proto: ReceiveAnswer (SDP Answer)
+
+    loop ICE Candidate Exchange
+        Client->>SignalServer: AddCandidate (ICE Candidate)
+        SignalServer->>Host: ForwardCandidate (ICE Candidate)
+        Host->>Proto: AddCandidate (ICE Candidate)
+
+        Host->>SignalServer: AddCandidate (ICE Candidate)
+        SignalServer->>Client: ForwardCandidate (ICE Candidate)
+        Client->>Proto: AddCandidate (ICE Candidate)
+    end
+
+    Proto->>Parsec: Establish Secure Channel
+    Parsec->>Proto: Ready
+    Client->>Host: Parsec Data Channel Established
+```
