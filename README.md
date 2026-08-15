@@ -10,23 +10,30 @@
 
 ## 🚧 Working in progress
 
+👉 https://github.com/nomi-san/lowlat (host only, Linux first)
+
+---
+
 The goal is single header for C/C++, and Rust bindings. Output binaries would be static lib and dynamic lib (DLL).
 
 > F**k this $320M acquisition!
 
+---
+
 ### Target platforms
 
 - [x] Windows (64-bit)
-- [ ] Linux
-- [ ] macOS 
+- [x] Linux
+- [ ] macOS
 
 ### Client features
 
-- [x] Hardware decoders
+- [x] Hardware decoders (NVDEC, AMF, oneVPL, VAAPI, Vulkan)
 - [x] FFmpeg decoder (smaller build)
 - [x] HEVC codec 
 - [x] YUV420, YUV444
 - [x] 10-bit color
+- [x] Full range, multiply YUV
 
 ### Instance functions
 
