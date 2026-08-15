@@ -29,11 +29,23 @@ The goal is single header for C/C++, and Rust bindings. Output binaries would be
 ### Client features
 
 - [x] Hardware decoders (NVDEC, AMF, oneVPL, VAAPI, Vulkan)
-- [x] FFmpeg decoder (smaller build)
+- [x] Software decoders (FFmpeg, MF)
 - [x] HEVC codec 
 - [x] YUV420, YUV444
 - [x] 10-bit color
 - [x] Full range, multiply YUV
+- [x] GPU zero-copy (decoder-renderer)
+
+### Host features
+- [ ] Desktop capture (DDA, PipeWire)
+- [ ] Hardware encoders (NVENC, AMF, oneVPL, VAAPI)
+- [ ] Software encoders (FFmpeg)
+- [ ] Input injection
+- [ ] WebRTC compatible
+
+### Kessel API
+- [ ] Signaling server
+- [ ] REST APIs
 
 ### Instance functions
 
@@ -87,6 +99,10 @@ The goal is single header for C/C++, and Rust bindings. Output binaries would be
 - [x] ParsecHostSendUserDataAll
 - [x] ParsecHostBeginP2P
 - [x] ParsecHostSetPermissions
+- [ ] ParsecHostNewAttempt
+- [ ] ParsecHostAddCandidate
+- [ ] ParsecHostBeginP2P
+- [ ] ParsecHostEndConnection 
 
 ### Signal functions
 
