@@ -70,6 +70,7 @@ The goal is single header for C/C++, and Rust bindings. Output binaries would be
 - [x] ParsecClientConnect (removed in new SDK)
 - [x] ParsecClientDisconnect
 - [x] ParsecClientNewAttempt
+- [ ] ~~ParsecClientAddCandidate~~ (moved to signaling)
 - [x] ParsecClientBeginP2P
 - [x] ParsecClientEndConnection
 - [x] ParsecClientGetStatus
@@ -102,10 +103,10 @@ The goal is single header for C/C++, and Rust bindings. Output binaries would be
 - [x] ParsecHostSendUserDataAll
 - [x] ParsecHostBeginP2P
 - [x] ParsecHostSetPermissions
-- [ ] ParsecHostNewAttempt
-- [ ] ParsecHostAddCandidate
-- [ ] ParsecHostBeginP2P
-- [ ] ParsecHostEndConnection 
+- [x] ParsecHostNewAttempt
+- [ ] ~~ParsecHostAddCandidate~~ (moved to signaling)
+- [x] ParsecHostBeginP2P
+- [x] ParsecHostEndConnection 
 
 ### Signal functions
 
