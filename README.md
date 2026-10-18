@@ -37,14 +37,14 @@ The goal is single header for C/C++, and Rust bindings. Output binaries would be
 - [x] GPU zero-copy (decoder-renderer)
 
 ### Host features
-- [ ] Desktop capture (DDA, PipeWire)
-- [ ] Hardware encoders (NVENC, AMF, oneVPL, VAAPI)
-- [ ] Software encoders (FFmpeg)
-- [ ] Input injection
-- [ ] WebRTC compatible
+- [x] Desktop capture (DDA, PipeWire)
+- [x] Hardware encoders (NVENC, AMF, oneVPL, VAAPI)
+- [x] Software encoders (FFmpeg)
+- [x] Input injection
+- [x] WebRTC compatible
 
 ### Kessel API
-- [ ] Signaling server
+- [x] Signaling server
 - [ ] REST APIs
 
 ### Instance functions
@@ -69,6 +69,9 @@ The goal is single header for C/C++, and Rust bindings. Output binaries would be
 
 - [x] ParsecClientConnect (removed in new SDK)
 - [x] ParsecClientDisconnect
+- [x] ParsecClientNewAttempt
+- [x] ParsecClientBeginP2P
+- [x] ParsecClientEndConnection
 - [x] ParsecClientGetStatus
 - [x] ParsecClientGetGuests
 - [x] ParsecClientSetConfig
