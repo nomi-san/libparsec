@@ -10,7 +10,7 @@
 
 ## 🚧 Working in progress
 
-👉 https://github.com/nomi-san/lowlat (host only, Linux first)
+👉 https://github.com/nomi-san/lowlat
 
 ---
 
